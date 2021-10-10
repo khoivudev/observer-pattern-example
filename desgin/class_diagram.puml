@@ -11,7 +11,7 @@ class WeatherData implements Subject {
     notifyObserver()
 
     getTemperature()
-    getHumility()
+    getHumidity()
     getPressure()
     measurementsChanged()
 }
