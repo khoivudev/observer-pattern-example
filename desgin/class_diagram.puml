@@ -1,0 +1,50 @@
+@startuml
+interface Subject {
+    registerObserver()
+    removeObserver()
+    notifyObserver()
+}
+
+class WeatherData implements Subject {
+    registerObserver()
+    removeObserver()
+    notifyObserver()
+
+    getTemperature()
+    getHumility()
+    getPressure()
+    measurementsChanged()
+}
+
+interface Observer {
+    update()
+}
+
+interface DisplayElement {
+    display()
+}
+
+class CurrentConditionsDisplay implements DisplayElement,Observer {
+    update()
+    display()
+}
+
+class StatisticsDisplay implements DisplayElement,Observer {
+    update()
+    display()
+}
+
+class ForecastDisplay implements DisplayElement,Observer {
+    update()
+    display()
+}
+
+class ThirdPartyDisplay implements DisplayElement,Observer {
+    update()
+    display()
+}
+
+Subject -> Observer : observers
+CurrentConditionsDisplay -> Subject : subject
+
+@enduml
